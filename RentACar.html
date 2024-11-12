@@ -60,7 +60,7 @@
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7); /* Yarı şeffaf siyah */
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -137,22 +137,22 @@ footer {
 
        
         .modal {
-    display: none; /* Başlangıçta görünmez */
+    display: none; 
     position: fixed;
-    z-index: 100; /* Diğer öğelerin üzerine çıkmasını sağlar */
+    z-index: 100; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* İçerik taşarsa kaydırma sağlar */
-    background-color: rgba(0, 0, 0, 0.8); /* Arka planı karartır */
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
 }
 
 .modal-content {
-    margin: 15% auto; /* Yatayda ortalar, üstten 15% uzaklık bırakır */
+    margin: 15% auto; 
     display: block;
-    max-width: 80%; /* Ekranı tamamen kaplamasın diye genişliği sınırla */
-    max-height: 80%; /* Resim çok büyükse yüksekliği de sınırla */
+    max-width: 80%; 
+    max-height: 80%; 
 }
 
 .close {
@@ -162,7 +162,7 @@ footer {
     color: white;
     font-size: 35px;
     font-weight: bold;
-    cursor: pointer; /* Mouse ile üzerine gelince tıklanabilir olduğunu gösterir */
+    cursor: pointer; 
 }
 
         .container .section1 p {
@@ -218,15 +218,15 @@ footer span {
             font-weight: 700;
         }
             .whatsapp a {
-            color: white; /* Burada istediğiniz rengi belirleyin */
-            text-decoration: none; /* Alt çizgi olmaması için */
+            color: white; 
+            text-decoration: none; 
         }
         .whatsapp a :hover
         {
             opacity: .8;
         }
         .whatsapp img {
-            width: 24px; /* Simgelerin boyutu */
+            width: 24px; 
             height: 24px;
             margin-right: 10px;
         }
@@ -247,24 +247,24 @@ footer span {
 
     .car-item img, .car-itemr img {
         width: 100%; 
-        max-height: none; /* Max height'ı kaldır */
+        max-height: none; 
     }
 
     h1, h2 {
-        font-size: 28px; /* Başlık boyutunu küçült */
+        font-size: 28px; /
     }
 
     p {
-        font-size: 16px; /* Paragraf boyutunu küçült */
+        font-size: 16px; 
     }
 
     footer {
-        font-size: 14px; /* Alt bilgi boyutunu küçült */
+        font-size: 14px; /
     }
 }
 @media (max-width: 768px) {
     body {
-        background-image: url('images/mobilcar.jpg'); /* Mobil arka plan resmi */
+        background-image: url('images/mobilcar.jpg'); 
      
     }
 }
@@ -303,7 +303,7 @@ footer span {
         </div>
 
         <div class="section2">
-            <h2>Arçlarımız</h2>
+            <h2>ARAÇLARIMIZ</h2>
             <div class="car-list">
                 <div class="car-item" onclick="openModal('images/Ford-Courier-2018.jpg')">
                     <img src="images/Ford-Courier-2018.jpg" alt="Ford Courier">
@@ -354,19 +354,19 @@ footer span {
 
     <script>
        function openModal(imageSrc) {
-    document.getElementById("modalImage").src = imageSrc; // Tıklanan resmin yolunu modal içindeki img tag'ine atıyoruz
-    document.getElementById("myModal").style.display = "block"; // Modal'ı görünür yapıyoruz
+    document.getElementById("modalImage").src = imageSrc; 
+    document.getElementById("myModal").style.display = "block"; 
 }
 
 function closeModal() {
-    document.getElementById("myModal").style.display = "none"; // Modal'ı gizliyoruz
+    document.getElementById("myModal").style.display = "none";
 }
 
         
 window.onclick = function(event) {
     const modal = document.getElementById("myModal");
     if (event.target === modal) {
-        modal.style.display = "none"; // Modal dışına tıklandığında modal'ı kapat
+        modal.style.display = "none"; 
     }
 }
 
