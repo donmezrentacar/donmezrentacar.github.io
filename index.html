@@ -2,11 +2,10 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="3mGF_yWmXQVstQrQtJONJj39snY-vqBQyEJqLev19CY" />
+    <meta name="google-site-verification" content="3mGF_yWmXQVstQrQtJONJj39snY-vqBQyEJqLev19CY" >
     <title>Ana Sayfa</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Genel stil ayarları */
         body {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             margin: 0;
@@ -22,64 +21,7 @@
             position: relative;
             overflow-y: auto;
         }
-        
-        /* WhatsApp butonunun animasyonu */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1); /* Biraz büyütme */
-            }
-            100% {
-                transform: scale(1); /* Normal boyuta dönme */
-            }
-        }
 
-        .whatsapp-button {
-            position: fixed;
-            top: 20px; /* Ekranın üst kısmına yerleştir */
-            right: 20px; /* Sağ tarafa hizala */
-            z-index: 1000;
-            animation: pulse 2s infinite; /* Sürekli büyüyüp küçülmesini sağla */
-        }
-
-        .whatsapp-button img {
-            width: 60px; /* Sabit bir genişlik belirle */
-            height: 60px; /* Sabit bir yükseklik belirle */
-        }
-
-        /* WhatsApp linki stil ayarları */
-        .whatsapp-button a {
-            display: flex;
-            align-items: center;
-            background-color: green;
-            padding: 10px 20px;
-            border-radius: 50px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .whatsapp-button a:hover {
-            opacity: 0.8;
-        }
-
-        /* Mobil uyumlu tasarım */
-        @media (max-width: 768px) {
-            .whatsapp-button {
-                top: 10px; /* Ekranın üst kısmına daha yakın yap */
-                right: 10px; /* Sağ tarafa hizala */
-                animation: pulse 3s infinite; /* Animasyon süresi biraz daha uzun olabilir */
-            }
-
-            .whatsapp-button img {
-                width: 50px; /* Mobilde daha küçük yap */
-                height: 50px; /* Yükseklik de küçülsün */
-            }
-        }
-
-        /* Diğer stil ayarları */
         .intro-image {
             position: fixed;
             top: 50%;
@@ -109,6 +51,46 @@
             }
         }
 
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .whatsapp-button a {
+            display: flex;
+            align-items: center;
+            background-color: green;
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .whatsapp-button a:hover {
+            opacity: 0.8;
+        }
+
         header {
             padding: 20px 10px;
             text-align: center;
@@ -135,12 +117,186 @@
             margin: 0;
         }
 
+        .menu-toggle {
+            background-color: orangered;
+            color: white;
+            border: none;
+            padding:22px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 8px;
+            border-radius: 45px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            background: rgba(53, 66, 74, 0.8);
+            border-radius: 5px;
+            margin-top: 240px;
+            position: absolute;
+            width: calc(100% - 50px);
+            left: 30px;
+        }
+
+        .nav-links.show {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav a {
+            margin: 10px 0;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        nav a.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav a:hover {
+            background-color: orangered;
+            color: white;
+        }
+
+        .container {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            margin-left: 20px;
+            margin-right: 20px;
+            max-width: 600px;
+        }
+
+        .content {
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        h2, h3, h4 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: darkkhaki;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
         footer {
             text-align: center;
             padding: 10px 0;
             width: 100%;
             font-weight: bold;
             color: grey;
+        }
+
+        .bir {
+            font-size: 55px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                background-image: url('images/indexmobil.webp');
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .menu-toggle {
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                width: 100%;
+                left: 0;
+                margin-top: 195px;
+            }
+
+            .whatsapp-button {
+                top: 10px;
+                right: 10px;
+                animation: pulse 3s infinite;
+            }
+
+            .whatsapp-button img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .menu-toggle {
+                padding: 10px 15px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -156,6 +312,12 @@
             </a>
         </div>
         <button class="menu-toggle" onclick="toggleMenu()">İÇERİK MENÜSÜ</button>
+        <nav class="nav-links">
+            <a href="RentACar.html">Rent A Car</a>
+            <a href="COV.html">COVtransfer</a>
+            <a href="turizm.html">Turizm</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
     </header>
 
     <div class="container">
@@ -167,10 +329,11 @@
             <h3>TURİZM</h3>
             <h4>BİZİ TERCİH ETTİĞİNİZ İÇİN TEŞEKKÜR EDERİZ</h4>
         </div>
+        <div id="todo-list"></div>
     </div>
 
     <footer>
-        <div class="whatsapp-button">
+      <div class="whatsapp-button">
             <a href="https://wa.me/905434738001" target="_blank">
                 <img src="images/wp.png" alt="WhatsApp">  0 (543) 473 80 01
             </a>
