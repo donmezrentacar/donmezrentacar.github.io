@@ -24,29 +24,29 @@
         .intro-image {
             position: fixed;
             top: 50%;
-            left: -100%; /* Başlangıçta ekranın dışında */
+            left: -100%;
             width: 100%;
             height: 100%;
-            background-image: url('images/97.jpg'); /* Resim URL'sini buraya ekleyin */
+            background-image: url('images/97.jpg'); 
             background-size: cover;
             background-position: center;
             z-index: 5;
-            animation: slideIn 4s forwards; /* Animasyon ekleniyor */
+            animation: slideIn 1.75s forwards; 
         }
 
         @keyframes slideIn {
             0% {
-                left:  auto; /* Ekranın dışından başla */
-                top: 50%; /* Yükseklik olarak ortada */
-                transform: translateY(-50%); /* Yüksekliği ortalamak için yukarı kaydır */
+                left:  auto; 
+                top: 50%; 
+                transform: translateY(-50%); 
             }
             50% {
-                left: 0; /* Ekranın ortasında */
-                transform: translateY(-50%); /* Yüksekliği ortalamaya devam et */
+                left: 0; 
+                transform: translateY(-50%);
             }
             100% {
-                left: 100%; /* Ekranın dışına kay */
-                transform: translateY(-50%); /* Yüksekliği ortalamaya devam et */
+                left: 100%; 
+                transform: translateY(-50%); 
             }
         }
 
@@ -102,7 +102,7 @@
             transition: opacity 0.5s ease, transform 0.5s ease;
             background: rgba(53, 66, 74, 0.8);
             border-radius: 5px;
-            margin-top: 240px; /* Menü açıldığında 150px boşluk bırakıldı */
+            margin-top: 240px; 
             position: absolute;
             width: calc(100% - 50px);
             left: 30px;
@@ -116,7 +116,7 @@
 
         nav a {
             margin: 10px 0;
-            color: white; /* Menüyü beyaz yap */
+            color: white; 
             text-decoration: none;
             font-weight: bold;
             padding: 10px;
@@ -133,7 +133,7 @@
 
         nav a:hover {
             background-color: orangered;
-            color: white; /* Hover durumunda da beyaz yap */
+            color: white; 
         }
 
         .container {
@@ -193,15 +193,15 @@
             font-weight: 700;
         }
             .whatsapp a {
-            color: white; /* Burada istediğiniz rengi belirleyin */
-            text-decoration: none; /* Alt çizgi olmaması için */
+            color: white; 
+            text-decoration: none; 
         }
         .whatsapp a :hover
         {
             opacity: .8;
         }
         .whatsapp img {
-            width: 24px; /* Simgelerin boyutu */
+            width: 24px; 
             height: 24px;
             margin-right: 10px;
         }
@@ -213,7 +213,6 @@
 }
       
 
-        /* Mobil uyumluluğu artırmak için ek stil */
         @media (max-width: 768px) {
             h1 {
                 font-size: 28px;
@@ -266,7 +265,7 @@
 
         @media (max-width: 768px) {
     body {
-        background-image: url('images/indexmobil.webp'); /* Mobil arka plan resmi */
+        background-image: url('images/indexmobil.webp'); 
      
     }
 }
@@ -279,7 +278,7 @@
         }
         @media (max-width: 768px) {
     .intro-image {
-        background-image: url('images/mobilcar.jpg'); /* Mobil arka plan resmi */
+        background-image: url('images/mobilcar.jpg'); 
      
     }
 }
@@ -347,11 +346,11 @@
             }
         }
 
-        // Giriş resmi kaybolduktan sonra içeriklerin görünmesi için
+        
         window.onload = function() {
             setTimeout(() => {
-                document.querySelector('.intro-image').style.display = 'none'; // Giriş resmi kaybolacak
-            }, 4000); // 4 saniye sonra kaybolacak
+                document.querySelector('.intro-image').style.display = 'none'; 
+            }, 2500); 
         };
     </script>
 
