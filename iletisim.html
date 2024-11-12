@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/iletisim.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: wheat;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center form content horizontally */
+            width: 100%;
+            max-width: 500px; /* Max form width for larger screens */
+            margin: 20px auto;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6); /* Background to make text readable */
+            border-radius: 8px;
+        }
+
+        input, textarea, button {
+            width: 100%; /* Make elements take up full width */
+            max-width: 400px; /* Max width of elements */
+            margin: 10px 0; /* Space between inputs */
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: orangered;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        header {
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            
+        }
+
+        .title-box {
+            display: inline-block;
+            background: orangered;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .menu {
+            display: block;
+            background: orangered;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s;
+            margin: 10px auto;
+            width: fit-content;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            color: wheat;
+            font-weight: 700;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            align-items: center;
+            margin-top: 10px;
+            background-color: green;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px 0;
+          
+            font-weight: 700;
+        }
+            .whatsapp a {
+            color: white; /* Burada istediğiniz rengi belirleyin */
+            text-decoration: none; /* Alt çizgi olmaması için */
+        }
+        .whatsapp a :hover
+        {
+            opacity: .8;
+        }
+        .whatsapp img {
+            width: 24px; /* Simgelerin boyutu */
+            height: 24px;
+            margin-right: 10px;
+        }
+        .whatsapp a:hover {
+            text-decoration: underline;
+        }
+        .iletisim h2 {
+            color: #fff;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 30px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .iletisim h3 {
+            font-weight: 800;
+            font-style: italic;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-image: url('images/iletisimmobil.jpg'); /* Mobile-specific background */
+            }
+
+            .whatsapp {
+                width: 100%; /* Make WhatsApp button stretch across the screen */
+                justify-content: center;
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            .whatsapp img {
+                width: 28px; /* Slightly larger WhatsApp icon */
+                height: 28px;
+            }
+
+            .iletisim h2 {
+                font-size: 24px; /* Smaller font for mobile */
+            }
+
+            .iletisim h3 {
+                font-size: 16px; /* Smaller font for mobile */
+            }
+
+            form {
+                width: 90%; /* Form takes up more space on mobile */
+                padding: 20px;
+            }
+
+            input, textarea, button {
+                padding: 10px;
+                font-size: 14px; /* Smaller font on mobile */
+            }
+
+            header {
+                padding: 10px 0;
+            }
+
+            .title-box h1 {
+                font-size: 26px; /* Smaller title on mobile */
+            }
+
+            .menu {
+                padding: 8px 16px;
+                font-size: 14px; /* Smaller menu text */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-box h1 {
+                font-size: 22px; /* Even smaller title for very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title-box">
+            <h1>İLETİŞİM</h1>
+        </div>
+        <a href="index.html" class="menu">ANA MENÜ</a>
+    </header>
+
+    <section class="iletisim">
+        <h3><mark>İstek ve şikayetlerinize 24 saat içinde geri dönüş sağlanacaktır. </mark></h3>
+        <h3><mark>Acil ihtiyaçlarınız için WhatsApp ile iletişime geçiniz</mark></h3>
+        <form action="https://formspree.io/f/xdkoeopy" method="POST">
+            <input type="text" name="name" placeholder="Adınız soyadınız" required>
+            <input type="email" name="email" placeholder="E-posta Adresi veya telefon numarası" required>
+            <textarea name="message" placeholder="hangi konuda yardımcı olabiliriz?" rows="4" required></textarea>
+            <button type="submit">Gönder</button>
+        </form>
+        <footer>
+            <div class="whatsapp">
+                <a href="https://wa.me/905434738001" target="_blank">
+                    <img src="images/wp.png" alt="WhatsApp">  0 (543) 473 80 01
+                </a>
+            </div>
+            <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
+        </footer>
+    </section>
+</body>
+</html>

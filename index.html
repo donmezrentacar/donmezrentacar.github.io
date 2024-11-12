@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/1000064303.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            overflow-y: auto;
+        }
+        .intro-image {
+            position: fixed;
+            top: 50%;
+            left: -100%; /* Başlangıçta ekranın dışında */
+            width: 100%;
+            height: 100%;
+            background-image: url('images/97.jpg'); /* Resim URL'sini buraya ekleyin */
+            background-size: cover;
+            background-position: center;
+            z-index: 5;
+            animation: slideIn 4s forwards; /* Animasyon ekleniyor */
+        }
+
+        @keyframes slideIn {
+            0% {
+                left:  auto; /* Ekranın dışından başla */
+                top: 50%; /* Yükseklik olarak ortada */
+                transform: translateY(-50%); /* Yüksekliği ortalamak için yukarı kaydır */
+            }
+            50% {
+                left: 0; /* Ekranın ortasında */
+                transform: translateY(-50%); /* Yüksekliği ortalamaya devam et */
+            }
+            100% {
+                left: 100%; /* Ekranın dışına kay */
+                transform: translateY(-50%); /* Yüksekliği ortalamaya devam et */
+            }
+        }
+
+        header {
+            padding: 20px 10px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-title {
+            background-color: orangered;
+            color: white;
+            border-radius: 50px;
+            padding: 20px;
+            display: inline-block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .menu-toggle {
+            background-color: orangered;
+            color: white;
+            border: none;
+            padding:22px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 8px;
+            border-radius: 45px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            background: rgba(53, 66, 74, 0.8);
+            border-radius: 5px;
+            margin-top: 240px; /* Menü açıldığında 150px boşluk bırakıldı */
+            position: absolute;
+            width: calc(100% - 50px);
+            left: 30px;
+        }
+
+        .nav-links.show {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav a {
+            margin: 10px 0;
+            color: white; /* Menüyü beyaz yap */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        nav a.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav a:hover {
+            background-color: orangered;
+            color: white; /* Hover durumunda da beyaz yap */
+        }
+
+        .container {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            margin-left: 20px;
+            margin-right: 20px;
+            max-width: 600px;
+        }
+
+        .content {
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        h2, h3, h4 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: darkkhaki;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            font-weight: bold;
+            color: grey;
+        }
+
+        html, body {
+            height: 100%;
+        }
+        .whatsapp {
+            display: inline-block;
+            align-items: center;
+            margin-top: 10px;
+            background-color: green;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px 0;
+          
+            font-weight: 700;
+        }
+            .whatsapp a {
+            color: white; /* Burada istediğiniz rengi belirleyin */
+            text-decoration: none; /* Alt çizgi olmaması için */
+        }
+        .whatsapp a :hover
+        {
+            opacity: .8;
+        }
+        .whatsapp img {
+            width: 24px; /* Simgelerin boyutu */
+            height: 24px;
+            margin-right: 10px;
+        }
+        .whatsapp a:hover {
+            text-decoration: underline;
+        }
+        .bir {
+    font-size: 55px;
+}
+      
+
+        /* Mobil uyumluluğu artırmak için ek stil */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            .menu-toggle {
+                font-size: 14px;
+            }
+            .content {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 2.5rem;
+            }
+            h3 {
+                font-size: 1.8rem;
+            }
+            .nav-links {
+                width: 100%;
+                left: 0;
+                margin-top: 195px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            .menu-toggle {
+                padding: 10px 15px;
+            }
+            .content {
+                padding: 10px;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+    body {
+        background-image: url('images/indexmobil.webp'); /* Mobil arka plan resmi */
+     
+    }
+}
+
+@media (max-width: 480px) {
+            body {
+                background-size: cover;
+                background-position: top;
+            }
+        }
+        @media (max-width: 768px) {
+    .intro-image {
+        background-image: url('images/mobilcar.jpg'); /* Mobil arka plan resmi */
+     
+    }
+}
+        
+    </style>
+</head>
+<body>
+
+    <div class="intro-image"></div>
+
+    <header>
+        <div class="header-title">
+            <a href="index.html" style="color: white; text-decoration: none;">
+                <h1 class="bir">DÖNMEZ </h1>
+                <h1>Rent A CAR & TRANSFER</h1>
+            </a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">İÇERİK MENÜSÜ</button>
+        <nav class="nav-links">
+            <a href="RentACar.html">Rent A Car</a>
+            <a href="COV.html">COVtransfer</a>
+            <a href="turizm.html">Turizm</a>
+            <a href="iletisim.html">İletişim</a>
+           
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>HOŞGELDİNİZ</h2>
+            <h3>D2 YETKİLİ ARAÇLARIMIZ</h3>
+            <h3>ÇUKUROVA HAVALİMANI TRANSFER</h3>
+            <h3>ARAÇ KİRALAMA</h3>
+            <h4>BİZİ TERCİH ETTİĞİNİZ İÇİN TEŞEKKÜR EDERİZ</h4>
+        </div>
+        <div id="todo-list"></div>
+    </div>
+
+    <footer>
+        <div class="whatsapp">
+            <a id="contact" style="text-decoration: none;" href="https://wa.me/905434738001" target="_blank">
+                <img src="images/wp.png" alt="WhatsApp">  0 (543) 473 80 01
+            </a>
+        </div>
+        <p>&copy; 2024 Tüm Hakları Saklıdır</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const links = document.querySelectorAll('.nav-links a');
+            
+            if (navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+                links.forEach(link => {
+                    link.classList.remove('show');
+                });
+            } else {
+                navLinks.classList.add('show');
+                links.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.classList.add('show');
+                    }, index * 100);
+                });
+            }
+        }
+
+        // Giriş resmi kaybolduktan sonra içeriklerin görünmesi için
+        window.onload = function() {
+            setTimeout(() => {
+                document.querySelector('.intro-image').style.display = 'none'; // Giriş resmi kaybolacak
+            }, 4000); // 4 saniye sonra kaybolacak
+        };
+    </script>
+
+</body>
+</html> 

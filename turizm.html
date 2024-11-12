@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turizm Rehberi</title>
+    <style>
+    body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/turizm.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow-y: auto;
+}
+
+header {
+    padding: 20px 10px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    background-color: orangered;
+    color: white;
+    border-radius: 50px;
+    padding: 20px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header p {
+    background-color: #e67e22;
+    display: inline-block;
+    border-radius: 40px;
+}
+
+h1 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    margin: 0;
+}
+
+nav {
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: orangered;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #e67e22;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+section {
+    flex: 2 1 60%;  /* Bu, section'ı flexbox ile esnek hale getirir, 60% genişliğinde olacak */
+    padding: 20px;
+    margin-right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside {
+    flex: 1 1 30%;  /* Aside'ı 30% genişliğinde esnek hale getirir */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.destination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.destination .place {
+    width: 30%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.destination .place img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination .place h3 {
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+.destination .place p {
+    padding: 15px;
+    text-align: justify;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.note {
+    color: white;
+    padding: 10px;
+    border-left: 5px solid #2980b9;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.note img {
+    width: 120px;  /* Resmin boyutunu ayarladım */
+    height: 120px;
+    margin-right: 10px;
+    border-radius: 50%;  /* Yuvarlak görünüm */
+}
+
+.note h4 {
+    margin: 0;
+    color: white;
+}
+
+.whatsapp {
+            display: inline-block;
+            align-items: center;
+            margin-top: 10px;
+            background-color: green;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px 0;
+          
+            font-weight: 700;
+        }
+            .whatsapp a {
+            color: white; /* Burada istediğiniz rengi belirleyin */
+            text-decoration: none; /* Alt çizgi olmaması için */
+        }
+        .whatsapp a :hover
+        {
+            opacity: .8;
+        }
+        .whatsapp img {
+            width: 24px; /* Simgelerin boyutu */
+            height: 24px;
+            margin-right: 10px;
+        }
+        .whatsapp a:hover {
+            text-decoration: underline;
+        }
+
+/* Mobil duyarlılık (768px ve daha küçük ekranlar için) */
+@media (max-width: 768px) {
+    body {
+        background-image: url('images/turizmmobil.jpg'); /* Mobil için farklı arka plan resmi */
+    }
+
+    header h1 {
+        font-size: 28px;  /* Başlık boyutunu küçültme */
+    }
+
+    header p {
+        font-size: 14px;  /* Alt açıklama boyutunu küçültme */
+    }
+
+    .destination .place {
+        width: 100%;  /* Mobilde her bir öğe tam genişlikte olacak şekilde düzenlendi */
+        margin-bottom: 15px;
+    }
+
+    .note img {
+        width: 80px;  /* Resim boyutunu küçültme */
+        height: 80px;
+    }
+
+    .note {
+        flex-direction: column;  /* Mobilde notlar dikey sıralanacak şekilde düzenlendi */
+        align-items: flex-start;
+    }
+
+    main {
+        flex-direction: column;  /* Ana içerik ve aside dikey sıralandı */
+    }
+
+    aside {
+        margin-top: 20px; /* Asidye alanı üst boşluk ekledim */
+    }
+
+    .whatsapp {
+        padding: 5px 10px; /* Daha az iç boşluk */
+    }
+
+    footer {
+        padding: 15px 5px; /* Footer alanı biraz daha esnek yapıldı */
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Turizm Rehberi</h1>
+        <p>En Popüler Tatil Yerlerini Keşfedin!</p>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="index.html">ANA MENÜ</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Main Content Section -->
+        <section>
+            <h2>D2 Yetki Belgeli Araçlarımız ile;</h2>
+            <div class="destination">
+                <div class="place">
+                    <img src="images/türizmtr.jpg" alt="Ziyaret Gezileri">
+                    <h3>Türkiye'nin Dört Bir Yanına Ziyaret Gezilerimiz</h3>
+                    <span> Turizm Rehberi olarak, Türkiye'nin her köşesine düzenlediğimiz ziyaret gezileri ile müşterilerimize unutulmaz deneyimler sunuyoruz.  Ege'nin huzur veren sahillerinden, Kapadokya'nın mistik manzaralarına kadar her yere konforlu araçlarımızla güvenle ulaşabilirsiniz.</span>
+                </div>
+                <div class="place">
+                    <img src="images/dügün.jpg" alt="Düğün, Kına ve Nişan">
+                    <h3>Düğün, Kına ve Nişan Etkinlikleri</h3>
+                    <p> Özel günlerinizin daha da özel olabilmesi için profesyonel araçlarla düğün, kına ve nişan etkinliklerinizi unutulmaz hale getiriyor. Etkinlikleriniz için konforlu ve güvenli bir seyahat deneyimi sunuyoruz. Geniş araç seçeneklerimiz ve deneyimli sürücülerimiz ile tüm etkinliklerinizde yanınızdayız.</p>
+                </div>
+                <div class="place">
+                    <img src="images/ozeltatil.jpg" alt="Özel Tatil Planları">
+                    <h3>Özel Tatil Planları</h3>
+                    <p>Hayalinizdeki tatili planlamak hiç bu kadar kolay olmamıştı! Özel tatil planlarınızı en ince detayına kadar belirleyerek, unutulmaz bir deneyim yaşamanız için sizi özel araçlarımızla istediğiniz destinasyona taşıyoruz. İster romantik bir tatil, ister aile gezisi ya da arkadaşlarınızla eğlenceli bir tatil planı yapın, tüm detaylarla ilgileniyor ve seyahatinizi en rahat şekilde geçirmeniz için gereken her şeyi sağlıyoruz.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aside Section -->
+        <aside>
+            <h3>Önemli Bilgiler</h3>
+            <div class="note">
+                <img src="images/nemrutt.jpg" alt="Güneşin Doğuşu">
+                <div>
+                    <h4>Nemrut'ta Güneşin Doğuşu</h4>
+                    <p>Nemrut Dağı, hem tarihi hem de doğal güzellikleriyle büyüleyici bir yerdir. Güneşin doğuşu sırasında, dağın zirvesindeki devasa heykellerin altındaki gölgeler ve ışık oyunları, her yıl sayısız turistin ilgisini çeker. Bu etkileyici manzara, erken saatte, doğanın uyanışıyla birlikte bir yanda tarihi kalıntılarla birleşir. Nemrut'ta güneşin doğuşunu izlemek, unutulmaz bir deneyimdir.</p>
+                </div>
+            </div>
+            <div class="note">
+                <img src="images/balon.jpg" alt="Balon Turu">
+                <div>
+                    <h4>Kapadokya'da Balon Turu</h4>
+                    <p>Kapadokya'da sabah erken saatlerde yapılan sıcak hava balonu turları, bölgenin eşsiz manzaralarını yukarıdan izlemek için mükemmel bir fırsattır.</p>
+                </div>
+            </div>
+            <div class="note">
+                <img src="images/aspendos.jpg" alt="Tarihi Ziyaretler">
+                <div>
+                    <h4>Antalya'da Tarihi Ziyaretler</h4>
+                    <p>Antalya'da tarihi yerleri gezmeyi unutmayın. Hadrian Kapısı ve Aspendos Tiyatrosu gibi yerler, bölgenin geçmişini keşfetmek için harika mekanlardır.</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="whatsapp">
+            <a href="https://wa.me/905434738001" target="_blank">
+                <img src="images/wp.png" alt="WhatsApp">  0 (543) 473 80 01
+            </a>
+        </div>
+        <p>&copy;Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>

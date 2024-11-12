@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çukurova Havalimanı Transfer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/COVs.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: wheat;
+        }
+        header {
+            padding: 10px 0;
+            text-align: center;
+        }
+        .title-box {
+            display: inline-block;
+            background: orangered;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .menu {
+            display: block;
+            background: orangered;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s;
+            margin: 10px auto;
+            width: fit-content;
+        }
+        .menu:hover {
+            background: #ff4500;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .main {
+            flex: 3;
+            margin-bottom: 20px;
+        }
+        .aside {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hero {
+            color: wheat;
+            height: 300px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bolder;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+        .services, .contact {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            color: wheat;
+            font-weight: 700;
+        }
+        .whatsapp {
+            display: inline-block;
+            align-items: center;
+            margin-top: 10px;
+            background-color: green;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px 0;
+          
+            font-weight: 700;
+        }
+            .whatsapp a {
+            color: white; /* Burada istediğiniz rengi belirleyin */
+            text-decoration: none; /* Alt çizgi olmaması için */
+        }
+        .whatsapp a :hover
+        {
+            opacity: .8;
+        }
+        .whatsapp img {
+            width: 24px; /* Simgelerin boyutu */
+            height: 24px;
+            margin-right: 10px;
+        }
+        .whatsapp a:hover {
+            text-decoration: underline;
+        }
+        
+        mark {
+            font-size: 25px;
+            color: darkslategray;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        /* Responsive Tasarım */
+        @media (min-width: 600px) {
+            .container {
+                flex-direction: row;
+            }
+            .main {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            .hero {
+                font-size: 3.5rem;
+            }
+        }
+
+        /* Mobil görünüm için daha küçük font boyutları ve düzeltmeler */
+        @media (max-width: 600px) {
+            body {
+                background-size: cover;
+            }
+            .hero {
+                height: 200px;
+                font-size: 1.2em;
+                padding: 10px;
+            }
+            .services, .contact {
+                padding: 10px;
+                margin: 10px 0;
+            }
+            .whatsapp {
+                padding: 5px 10px;
+                margin-bottom: 20px;
+                width: 100%; /* WhatsApp düğmesi mobilde tam genişlikte */
+                text-align: center;
+            }
+            mark {
+                font-size: 20px;
+            }
+            .title-box h1 {
+                font-size: 1.6rem;
+            }
+            .menu {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* 768px ve altındaki ekranlar için düzenlemeler */
+        @media (max-width: 768px) {
+            body {
+                background-image: url('images/COVs.webp'); /* Mobil arka plan resmi */
+                background-size: cover;
+            }
+            .main {
+                padding: 10px;
+            }
+            .container {
+                flex-direction: column;
+            }
+            .whatsapp {
+                flex-direction: column;
+                text-align: center;
+            }
+            .whatsapp img {
+                width: 20px;
+                height: 20px;
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Esnek görseller */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title-box">
+            <h1>Çukurova Havalimanı Transfer</h1>
+        </div>
+        <a href="index.html" class="menu">ANA MENÜ</a>
+    </header>
+    
+    <div class="hero">
+        Havalimanı Transferiniz İçin Buradayız!
+    </div>
+    
+    <div class="container">
+        <div class="main">
+            <section id="services" class="services">
+                <h2>Hizmetlerimiz</h2>
+                <ul>
+                    <li>Özel Transfer</li>
+                    <li>Paylaşımlı Transfer</li>
+                    <li>VIP Araç Seçenekleri</li>
+                    <li>24/7 Müşteri Desteği</li>
+                </ul>
+            </section>
+
+            <section id="contact" class="contact">
+               <h4>DÖNMEZ TRANSFER</h4>
+                <img src="images/1000064303.jpg" alt="Havalimanı">
+                
+            </section>
+        </div>
+
+        <aside class="aside">
+            <h2>Çukurova Uluslararası Havalimanı</h2>
+            <p>Türkiye'nin Adana, Mersin ve Osmaniye illerine hizmet veren uluslararası havalimanıdır.</p>
+            <p>Mersin'in Tarsus ilçesi sınırları içerisinde, ilçe merkezine 15 km, Adana şehir merkezine 35 km,</p>
+            <p>Mersin şehir merkezine 45 km uzaklıkta yer almaktadır.</p>
+            <p>Adını Çukurova'dan almaktadır. Havalimanının sahibi Devlet Hava Meydanları İşletmesi iken</p>
+            <p>işletmecisi Favori Çukurova Havalimanı İşletmeciliği Anonim Şirketi'dir.</p>
+            <p><mark>Rahat ve konforlu bir yolculuk yapın!</mark></p>
+            <h3>Öneriler</h3>
+            <ul>
+                <li>Havalimanında beklemeyin, önceden rezervasyon yapın!</li>
+                <li>VIP hizmetlerimizi deneyin, konforun tadını çıkarın!</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="whatsapp">
+            <a href="https://wa.me/905434738001" target="_blank">
+                <img src="images/wp.png" alt="WhatsApp">  0 (543) 473 80 01
+            </a>
+        </div>
+        <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
+    </footer>
+</body>
+</html>
