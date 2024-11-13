@@ -28,32 +28,45 @@
             padding: 0;
         }
 
-        /* Başlık */
         header {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 10;
-            position: relative;
-            opacity: 0;
-            transform: translateY(-50px);
-            animation: fadeInHeader 1s forwards;
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInHeader 1s forwards;
+    height: 100vh; /* Header'ı tam ekran yapar */
+}
 
-        .header-title h1 {
-            font-family: 'Lora', serif;
-            font-size: 48px;
-            margin: 0;
-            color: white;
-            background-color: orangered;
-            padding: 20px;
-            border-radius: 50px;
-            max-width: 100%;
-        }
+.header-title h1 {
+    font-family: 'Lora', serif;
+    font-size: 10vw;  /* Başlık boyutunu ekran genişliğine göre ayarlar */
+    margin: 0;
+    color: white;
+    background-color: orangered;
+    padding: 20px 40px;  /* Başlık çevresine biraz boşluk ekler */
+    border-radius: 50px;
+    max-width: 90%;  /* Başlık metni ekranın %90'ını kapsayacak şekilde sınırlanır */
+}
+
+/* Animasyonlar */
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
         /* Menü */
         nav {
@@ -268,9 +281,6 @@
                 background: url('images/indexmobil.webp') no-repeat center center;
                 background-size: cover;
                 background-attachment: fixed;
-            }
-            aside {
-                margin: 20px;
             }
         }
     </style>
