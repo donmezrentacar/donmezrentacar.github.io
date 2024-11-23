@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+sitemap: https://www.donmezrentacar.com/sitemap.xml
